@@ -1,0 +1,18 @@
+ Código Exemplo Simplificado
+#include <Servo.h>
+
+Servo base, ombro, cotovelo, garra;
+
+void setup() {
+  base.attach(2);
+  ombro.attach(3);
+  cotovelo.attach(4);
+  garra.attach(5);
+}
+
+void loop() {
+  base.write(map(analogRead(A0), 0, 1023, 0, 180));
+  ombro.write(map(analogRead(A1), 0, 1023, 0, 180));
+  cotovelo.write(map(analogRead(A2), 0, 1023, 0, 180));
+  garra.write(map(analogRead(A3), 0, 1023, 0, 180));
+}
